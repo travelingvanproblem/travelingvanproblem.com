@@ -14,7 +14,7 @@ export default siteConfig({
   author: 'Traveling Van Problem',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'Blog & Guidebook about traveling with a camper van in Europe 🚚 🇪🇺',
 
   // social usernames (optional)
   //twitter: 'vanproblem',
