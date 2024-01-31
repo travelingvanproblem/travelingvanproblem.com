@@ -17,6 +17,10 @@ import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
 
+import { footerLinks } from '@/lib/config'
+import cs from 'classnames'
+import { useNotionContext } from 'react-notion-x'
+
 // TODO: merge the data and icons from PageSocial with the social links in Footer
 
 export const FooterImpl: React.FC = () => {
@@ -36,14 +40,17 @@ export const FooterImpl: React.FC = () => {
     setHasMounted(true)
   }, [])
 
+  const { components, mapPageUrl } = useNotionContext()
+
   return (
     <footer className={styles.footer}>
         <div className={styles.footerSocial}>
           <div className={styles.settings}>
-            <a href={config.host} rel="home" title="Logo">
+            <a className={styles.link} href={config.host} rel="home" title="Logo">
               <svg className={styles.logo}>
-                <use xlinkHref="/logo.svg#logo"/>
+                <use xlinkHref="/favicon.svg#logo"/>
               </svg>
+              <span>{config.author}</span>
             </a>
           </div>
           <div className={styles.settings}>
@@ -170,7 +177,38 @@ export const FooterImpl: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="site-info">
+      <div className="SiteInfo">
+        <div className={styles.siteInfoLinks}>
+          {footerLinks
+          ?.map((link, index) => {
+            if (!link.pageId && !link.url) {
+              return null
+            }
+
+            if (link.pageId) {
+              return (
+                <components.PageLink
+                  href={mapPageUrl(link.pageId)}
+                  key={index}
+                  className={cs(styles.navLink, 'breadcrumb', 'button')}
+                >
+                  {link.title}
+                </components.PageLink>
+              )
+            } else {
+              return (
+                <components.Link
+                  href={link.url}
+                  key={index}
+                  className={cs(styles.navLink, 'breadcrumb', 'button')}
+                >
+                  {link.title}
+                </components.Link>
+              )
+            }
+          })
+          .filter(Boolean)}
+        </div>
         <div className={styles.copyright}>© Copyright {currentYear}. All rights reserved.</div>
       </div>
     </footer>

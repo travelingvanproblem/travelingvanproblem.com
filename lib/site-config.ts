@@ -35,6 +35,8 @@ export interface SiteConfig {
 
   navigationStyle?: types.NavigationStyle
   navigationLinks?: Array<NavigationLink>
+
+  footerLinks?: Array<NavigationLink>
 }
 
 export interface NavigationLink {

@@ -59,5 +59,24 @@ export default siteConfig({
       title: 'About',
       pageId: '9f31b4bc3e8e43f095bff906ce1c67ac'
     }
+  ],
+
+  footerLinks: [
+    {
+      title: 'Terms and Conditions',
+      pageId: '77c3a1abda4840658830358d0d072656'
+    },
+    {
+      title: 'Privacy Policy',
+      pageId: '8a2fdf5b46474c098213be34b6f59a75'
+    },
+    {
+      title: 'Affiliate Disclosure',
+      pageId: 'e67f9021d7ce4500a5d1fbfec3851d16'
+    },
+    {
+      title: 'Security',
+      pageId: 'a1bd2c638f3146acabdfc3b2e5a11cac'
+    }
   ]
 })
