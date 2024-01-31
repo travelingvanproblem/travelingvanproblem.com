@@ -40,8 +40,10 @@ export const FooterImpl: React.FC = () => {
     <footer className={styles.footer}>
         <div className={styles.footerSocial}>
           <div className={styles.settings}>
-            <a href="/" rel="home" title="Logo">
-              <img className={styles.logo} src="/logo.svg"></img>
+            <a href={config.host} rel="home" title="Logo">
+              <svg className={styles.logo}>
+                <use xlinkHref="/logo.svg#logo"/>
+              </svg>
             </a>
           </div>
           <div className={styles.settings}>

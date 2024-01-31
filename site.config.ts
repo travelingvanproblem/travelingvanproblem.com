@@ -56,10 +56,6 @@ export default siteConfig({
   // navigationStyle: 'custom',
   navigationLinks: [
     {
-      title: 'Guidebook',
-      pageId: 'dcf8bd01dfa04a20b2fe93d1cad3d59d'
-    },
-    {
       title: 'About',
       pageId: '9f31b4bc3e8e43f095bff906ce1c67ac'
     }

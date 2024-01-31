@@ -45,7 +45,11 @@ export const NotionPageHeader: React.FC<{
   return (
     <header className='notion-header'>
       <div className='notion-nav-header'>
-        <Breadcrumbs block={block} rootOnly={true} />
+        <a href="/" rel="home" title="Logo">
+          <svg className={styles.logo}>
+            <use xlinkHref="/logo.svg#logo"/>
+          </svg>
+        </a>
 
         <div className='notion-nav-header-rhs breadcrumbs'>
           {navigationLinks
