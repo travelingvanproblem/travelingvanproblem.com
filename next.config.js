@@ -18,5 +18,30 @@ module.exports = withBundleAnalyzer({
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+  },
+  async redirects() {
+    return [
+      // Preserve the old hugo urls in this blog
+      {
+        source: '/docs/remote-work/affordable-4g-data/',
+        destination: '/affordable-4g-data/',
+        permanent: true
+      },
+      {
+        source: '/docs/living-in-the-van/',
+        destination: '/living-in-a-van/',
+        permanent: true
+      },
+      {
+        source: '/docs/europe/',
+        destination: '/europe/',
+        permanent: true
+      },
+      {
+        source: '/docs/remote-work/',
+        destination: '/working-remotely/',
+        permanent: true
+      },
+    ]
   }
 })
