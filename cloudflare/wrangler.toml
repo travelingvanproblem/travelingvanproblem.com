@@ -1,0 +1,14 @@
+name = "travelingvanproblem-proxy-development"
+main = "./src/proxy.ts"
+workers_dev = true
+send_metrics = false
+compatibility_date = "2024-02-06"
+
+[vars]
+ENVIRONMENT = "development"
+
+[env.production]
+name = "travelingvanproblem-proxy"
+route = { pattern = "*travelingvanproblem.com/*", zone_name = "travelingvanproblem.com" }
+workers_dev = false
+ENVIRONMENT = "production"
