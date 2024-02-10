@@ -35,6 +35,8 @@ export const PageHead: React.FC<
         content='black'
       />
 
+      <meta name='impact-site-verification' content='6e5b598e-2a16-4df7-95af-19c95601b9f4' />
+
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fefffe" key="theme-color-light"/>
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2d3439" key="theme-color-dark"/>
 
